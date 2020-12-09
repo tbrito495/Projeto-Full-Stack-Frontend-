@@ -9,6 +9,7 @@ import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import useForm from '../CustomHooks/useForm';
+import { useUnProtect } from '../ProtectedRoute/useUnProtect';
 
 
 
@@ -29,7 +30,7 @@ const LoginPage = (props) =>{
         axios.post("http://localhost:3003/user/login", body)
         
         .then(response => {
-            console.log("usuario logado")
+            console.log("user logged in")
             localStorage.setItem("token", response.data.token);
 
         })
@@ -43,6 +44,7 @@ const LoginPage = (props) =>{
             Login()
             resetState()
         }
+        useUnProtect()
 
     return(
         <div>
@@ -75,7 +77,7 @@ const LoginPage = (props) =>{
             required
             fullWidth
             name="password"
-            label="Senha"
+            label="password"
             value={form.password}
             onChange={handleOnchange}
             type="password"
@@ -100,7 +102,7 @@ const LoginPage = (props) =>{
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {"Não tem conta? Cadastre-se"}
+                {"No account? Sign-up"}
               </Link>
             </Grid>
           </Grid>
