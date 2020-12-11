@@ -14,6 +14,7 @@ const AllMusicPage = (props) => {
         })
         .catch(error=>{
             console.log(error)
+            console.log(axiosConfig)
         })
     }
     useEffect(() => {
@@ -29,7 +30,7 @@ const AllMusicPage = (props) => {
                     <div>
                         <div>
                             {musics.title}
-                        </div>
+                                </div>
             
                     </div>
                 )
