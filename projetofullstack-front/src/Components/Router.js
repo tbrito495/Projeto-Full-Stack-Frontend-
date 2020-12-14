@@ -23,14 +23,16 @@ import SignupPage from "./SignupPage"
                     <Route exact path={"/login"}>
                       <LoginPage/>
                     </Route>
+                 
                     <Route exact path={"/music/create"}>
                         <CreateMusicPage/>
                     </Route>
-                    <Route exact path= {"/music/:id"}>
-                        <MusicPage/>
-                    </Route>
+                   
                     <Route exact path= {"/music/all"}> 
                         <AllMusicPage/>
+                    </Route>
+                    <Route exact path= {"/music/:id"}>
+                        <MusicPage/>
                     </Route>
                 </Switch>
             </BrowserRouter>

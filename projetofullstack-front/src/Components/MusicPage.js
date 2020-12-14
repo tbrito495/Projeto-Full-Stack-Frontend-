@@ -6,8 +6,9 @@ import { useProtect } from '../ProtectedRoute/useProtect'
 
 const MusicPage = (props) => {
     const [music, setMusic] = useState([])
+    const pathParams = useParams()
     const AllMusics = () => {
-        axios.get("http://localhost:3003/music/:id", axiosConfig)
+        axios.get(`http://localhost:3003/music/${pathParams.id}`, axiosConfig)
         .then(response =>{
             console.log(response.data)
             setMusic(response.data)
@@ -18,30 +19,32 @@ const MusicPage = (props) => {
     }
     useEffect(() => {
         AllMusics()
+        console.log(music)
       }, [])
 
     useProtect()
     
     return (
         <div>
-            <p>music id</p>
-            {music.map((musics)=>{
-                return(
-                    <div>
-                        <div>
-                            {musics.title}
-                        </div>
-                       <audio useRef="audio_tag" src={musics.file} controls autoPlay>   
-                       </audio>
-                       <div>
-                        {musics.genre}
-                       </div>
-                       <div>
-                        {musics.album}
-                       </div>
-                    </div>
-                )
-            })}
+            <div>
+            {music.title}
+            </div>
+            <div>
+            <audio
+            src=  {music.file} controls> 
+
+            </audio>
+          
+            </div>
+            <div>
+            {music.genre}
+            </div>
+            <div>
+            {music.album}
+            </div>
+            <div>
+            {music.author_name}
+            </div>
     
         </div>
     )
