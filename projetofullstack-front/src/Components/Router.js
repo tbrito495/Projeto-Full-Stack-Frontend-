@@ -1,13 +1,13 @@
 import react from "react"
 import{Switch, Route} from 'react-router'
 import {BrowserRouter} from 'react-router-dom'
-import AllMusicPage from "./AllMusicPage"
+import AllMusicPage from "../pages/AllMusicPage/AllMusicPage"
 
-import CreateMusicPage from "./CreateMusicPage"
-import LoginPage from "./LoginPage"
-import MusicPage from "./MusicPage"
+import CreateMusicPage from "../pages/CreateMusicPage/CreateMusicPage"
+import LoginPage from "../pages/LoginPage/LoginPage"
+import MusicPage from "../pages/MusicPage/MusicPage"
 
-import SignupPage from "./SignupPage"
+import SignupPage from "../pages/SignupPage/SignupPage"
 
 
   const Router = (props) =>{
